@@ -15,5 +15,7 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push -f https://Dleysam:$HF_TOKEN@huggingface.co/spaces/Dleysam/mothercare-predictor-api main
-        
+        run: |
+          git remote add hf https://Dleysam:$HF_TOKEN@huggingface.co/spaces/Dleysam/mothercare-predictor-api
+          git push -f hf main
+          
